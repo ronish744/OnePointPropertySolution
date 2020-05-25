@@ -1,0 +1,36 @@
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 25
+    username: concreate.realtor@gmail.com
+    password: Kalpana304#
+
+    # Other properties
+
+    properties:
+      mail:
+         debug: true
+         transport.protocol: smtp
+         smtp.auth: true
+         smtp.connectiontimeout: 5000
+         smtp.timeout: 5000
+         smtp.writetimeout: 5000
+         smtp.starttls.enable: true
+  application:
+      name: concreate-realtor-backend
+
+  datasource.url: "jdbc:mysql://localhost:3306/realestate?autoreconnect=true"
+  datasource.username: root
+  datasource.password: ""
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+server:
+  port: 8082
+
+db-queries:
+  listOfEvent: "select * from eventdetail"
+  insertEvent: "Insert INTO eventdetail (name,eventdate, eventtype, projectid, address,description) VALUES(?,?,?,?,?,?)"
+  updateEvent:  "update eventdetail set name=?,eventdate=?,eventtype=?,projectid=?,address=?,description=? where id=?"
