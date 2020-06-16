@@ -24,6 +24,4 @@ public interface ProjectRepository {
     boolean updateInventory(int id, Inventory inventory) throws Exception;
     boolean updateActiveStatus(int id, boolean isActive) throws Exception;
     boolean deleteInventoryById(int id) throws Exception;
-
-
 }

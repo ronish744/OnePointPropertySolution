@@ -6,9 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>lead</artifactId>
-  <groupId>com.onepointpropertybackend</groupId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Lead</name>
+  <name>lead</name>
   <description>Lead Service</description>
 
   <dependencies>

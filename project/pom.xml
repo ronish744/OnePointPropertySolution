@@ -5,10 +5,8 @@
     <artifactId>onepointpropertybackend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.onepointpropertybackend</groupId>
-  <version>0.0.1-SNAPSHOT</version>
   <artifactId>project</artifactId>
-  <name>Project</name>
+  <name>project</name>
   <description>Project Service</description>
 
   <dependencies>
