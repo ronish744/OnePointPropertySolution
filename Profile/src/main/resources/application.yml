@@ -1,6 +1,7 @@
+
 spring:
   application:
-      name: event-services
+      name: profile-services
   datasource.url: "jdbc:mysql://localhost:3306/realestate?autoreconnect=true"
   datasource.username: root
   datasource.password: ""
@@ -22,13 +23,14 @@ spring:
           writetimeout: 5000
           starttls.enable: true
 
-
 server:
-  port: 8083
-
-db-queries:
-  listofEvent: "SELECT e.id, e.name AS EventName, e.eventdate, e.eventtype, e.address, e.description, p.id AS ProjectId, p.name AS ProjectName FROM eventdetail e JOIN projectdetail p ON e.projectid = p.id"
-  insertEvent: "Insert INTO eventdetail (name,eventdate, eventtype, projectid, address,description) VALUES(?,?,?,?,?,?)"
-  updateEvent:  "update eventdetail set name=?,eventdate=?,eventtype=?,projectid=?,address=?,description=? where id=?"
+  port: 8085
 
 eureka.client.service-url.defaultZone: http://localhost:8761/eureka/
+
+db-queries:
+  findAllProfile: "select * from profile"
+  findProfile: "select * from profile where emailid=?"
+  insertProfile: "Insert INTO profile (firstname,lastname,contact,emailid,password,address,city,roleid,status) VALUES (?,?,?,?,?,?,?,?,?)"
+  updateProfile:  "update profile set firstname=?,lastname=?, contact=?, emailid=?,password=?,address=?,city=?,roleid=?,status=? where id=?"
+  updateDefaultPassword: "update profile set password=? where emailid=?"

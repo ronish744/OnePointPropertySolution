@@ -1,0 +1,33 @@
+spring:
+   application:
+      name: gateway-services
+
+server:
+   port: 8081
+
+eureka.client.service-url.defaultZone: http://localhost:8761/eureka/
+hystrix:
+   command:
+      default:
+         execution:
+            isolation:
+               thread:
+                  timeoutInMilliseconds: 60000
+            timeout:
+               enabled: false:
+ribbon:
+     ConnectTimeout: 3000
+     ReadTimeout: 60000
+zuul:
+   #This prefix property is used to set a predefined name to be prefixed in every url when calling the api
+   prefix: /concrete-realtors
+   routes:
+      auth-services:
+         path: /auth/**
+         serviceId: auth-services
+      event-services:
+         path: /events/**
+         serviceId: event-services
+      profile-services:
+         path: /profile/**
+         serviceId: profile-services
